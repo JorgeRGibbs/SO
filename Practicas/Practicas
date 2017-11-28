@@ -1,0 +1,20 @@
+Práctica 1:	Subproceso de arbol con n hijos con 3 hijos lado derecho y 3 lado izquierdo	-> practica1.docx
+-Python	->	Gibbs	()
+-C		->	Suro	(subProcesoArbol.c)
+
+Práctica 2: Multiplicación de matrices sin pipes							-> 
+-Python	->	Gibbs	()	 
+-C		->	Suro	(mat.c)
+
+Práctica 3:	Multiplicación de matrices con pipes en c, en python filtro rgb			-> Practica3.odt
+-C		->	Suro	(matPipes.c)
+-Python	->	Gibbs	()
+
+Práctica 4:	Dividir zona crítica en 4 y entran 4 productores y 4 consumidores 		-> -.pdf
+-C		->	Suro (4zoncrit4p4c.c)
+
+Práctica 5:	Anexa foto
+-C		->	
+
+
+Investigación detallada del sistema de archivos, diferencias entre sistemas de archivos, ínodos, todo
