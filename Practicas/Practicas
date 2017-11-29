@@ -8,7 +8,7 @@ Práctica 2: Multiplicación de matrices sin pipes							->
 
 Práctica 3:	Multiplicación de matrices con pipes en c, en python filtro rgb			-> Practica3.odt
 -C		->	Suro	(matPipes.c)
--Python	->	Gibbs	()
+-Python	->	Gibbs	(Practica3.py)
 
 Práctica 4:	Dividir zona crítica en 4 y entran 4 productores y 4 consumidores 		-> -.pdf
 -C		->	Suro (4zoncrit4p4c.c)
