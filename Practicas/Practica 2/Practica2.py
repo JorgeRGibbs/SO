@@ -13,31 +13,50 @@ def Multi(A,B,C,AB,CB,n,res,g,FA):
 			for j in range(AB):
 				for k in range(CB):
 					C[g][j] = C[g][j] + (A[g][k] * B[k][j])
-			print("C[g]")
-			print("Soy el proceso",os.getpid()," hice la fila ",g," de C")
+			print(C[g])
+			print("PID",os.getpid(),":",g)
 			g=g+1
 
 def Matrices(FA,AB,CB):
-	A= [ [ randint(0,50) for i in range(FA) ] for j in range(AB) ]
-	B= [ [ randint(0,50) for i in range(AB) ] for j in range(CB) ]
-	C= [ [ 0 for i in range(FA) ] for j in range(CB) ]
+	'''
+    #inicializar matrices
+	A= [ [ randint(0,50) for i in range(filasA) ] for j in range(FC) ]
+    B= [ [ randint(0,50) for i in range(FC) ] for j in range(colsB) ]
+    C= [ [ 0 for i in range(filasA) ] for j in range(colsB) ]
 	print("Matriz A:")
 	print("")
 	print(A)
 	print("Matriz B:")
 	print("")
-	print(B)
+	print(B)'''
+	print("A:")
+	print("")
+	for i in range(FA):
+		A.append([])
+		for j in range(AB):
+			r = randint(0,50)
+			A[i].append(r)
+		print (A[i])
+	print("B:")
+	print("")
+	for i in range(AB):
+		B.append([])
+		for j in range(CB):
+			r = randint(0,50)
+			B[i].append(r)
+		print (B[i])
+	print("Generando C...")
+	for i in range(FA):
+		C.append([])
+		for j in range(CB):
+			C[i].append(0)
 
 def Procesos(A,B,C,FA,AB,CB,n):
-	#div=FA/n#round this shit
-	div=float(FA)/float(n)
-	if div>int(div):	#redondeo
-		res=int(div+1)
-	else:
-		res=int(div)
-	print("procesos:",n," div:",res,)
 	g=0
-
+	#div=FA/n#round this , can't be float
+	div=FA/n
+	res = round(div)
+	print(" división:",res,)
 	for it in range(n):
 		proceso = Process(target=Multi, args=(A,B,C,AB,CB,g,n,res,FA))
 		proceso.start()
@@ -45,15 +64,16 @@ def Procesos(A,B,C,FA,AB,CB,n):
 			
 	if g == n:
 		for q in range(i):
-			proceso.join()
+			proceso.join() #for
 
 			
 if  __name__ == '__main__':
 	print("Multiplicacion de Matrices con procesos")
-	FA = int(input("Ingresa el numero de filas de la Matriz A "))
-	AB = int(input("Ingresa el numero de columnas de la Matriz A y Columnas en B "))
-	CB = int(input("Ingresa el numero de columnas de la Matriz B "))
+	FA = int(input("Numero de filas en A "))
+	AB = int(input("Numero de columnas en A y filas en B "))
+	CB = int(input("Numero de columnas en B "))
 	n = int(input("Cuantos procesos?"))
 
 	Matrices(FA,AB,CB)
 	Procesos(A,B,C,FA,AB,CB,n)
+
