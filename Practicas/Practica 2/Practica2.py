@@ -5,18 +5,6 @@ A=[]
 B=[]
 C=[]
 
-
-def Multi(A,B,C,AB,CB,n,res,g,FA):
-	#print ("Kinder Prozess: PID ",os.getpid()," Mein vater ist: PPID ",os.getppid())
-	for i in range(res):
-		if g<FA:
-			for j in range(AB):
-				for k in range(CB):
-					C[g][j] = C[g][j] + (A[g][k] * B[k][j])
-			print(C[g])
-			print("PID",os.getpid(),":",g)
-			g=g+1
-
 def Matrices(FA,AB,CB):
 	'''
     #inicializar matrices
@@ -50,6 +38,18 @@ def Matrices(FA,AB,CB):
 		C.append([])
 		for j in range(CB):
 			C[i].append(0)
+
+def Multi(A,B,C,AB,CB,n,res,g,FA):
+	#print ("Kinder Prozess: PID ",os.getpid()," Mein vater ist: PPID ",os.getppid())
+	for i in range(res):
+		if g<FA:
+			for j in range(AB):
+				for k in range(CB):
+					C[g][j] = C[g][j] + (A[g][k] * B[k][j])
+			print(C[g])
+			print("PID",os.getpid(),":",g)
+			g=g+1
+
 
 def Procesos(A,B,C,FA,AB,CB,n):
 	g=0
